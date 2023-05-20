@@ -2,7 +2,7 @@ plugins {
     id 'java'
     id 'application'
     id 'checkstyle'
-    id 'jacoco'create Makefile for project
+    id 'jacoco'
 }
 
 group = 'hexlet.code'
