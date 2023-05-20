@@ -2,7 +2,7 @@ plugins {
     id 'java'
     id 'application'
     id 'checkstyle'
-    id 'jacoco'
+    id 'jacoco'create Makefile for project
 }
 
 group = 'hexlet.code'
@@ -11,7 +11,6 @@ version = '1.0-SNAPSHOT'
 application {
     mainClass = 'hexlet.code.App'
 }
-
 
 repositories {
     mavenCentral()
