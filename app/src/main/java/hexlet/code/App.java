@@ -1,11 +1,13 @@
 package hexlet.code;
 
+import hexlet.code.games.CheckEven;
+
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String playerName = "";
+        String playerName = "Placeholder";
         int playerChoice = -1;
 
         while (playerChoice != 0) {
@@ -17,9 +19,9 @@ public class App {
 
             switch (playerChoice) {
                 case 1 -> playerName = getPlayerName(scanner);
+                case 2 -> CheckEven.play(scanner, playerName);
                 case 0 -> System.out.print("Goodbye.");
             }
-
         }
     }
 
