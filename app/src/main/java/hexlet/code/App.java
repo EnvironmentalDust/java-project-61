@@ -9,28 +9,24 @@ import static hexlet.code.games.Greet.greetPlayer;
 public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String playerChoice = "";
+        String playerChoice;
 
-        while (!playerChoice.equals("0")) {
+        showMenu();
 
-            showMenu();
+        playerChoice = scanner.next();
+        System.out.printf("Your choice: %s%n%n", playerChoice);
 
-            playerChoice = scanner.next();
-            System.out.printf("Your choice: %s%n%n", playerChoice);
-
-            if (playerChoice.equals("1")) {
-                greetPlayer(scanner);
-            } else if (playerChoice.equals("2")) {
-                CheckEven.play(scanner);
-            } else if (playerChoice.equals("0")) {
-                System.out.println("Goodbye.");
-                return;
-            } else {
-                System.out.println("Wrong input.");
-                return;
-            }
-
+        if (playerChoice.equals("1")) {
+            greetPlayer(scanner);
+        } else if (playerChoice.equals("2")) {
+            CheckEven.play(scanner);
+        } else if (playerChoice.equals("0")) {
+            System.out.println("Goodbye.");
+        } else {
+            System.out.println("Wrong input.");
         }
+
+        scanner.close();
     }
 
     public static void showMenu() {
