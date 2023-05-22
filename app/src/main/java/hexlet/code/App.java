@@ -23,10 +23,10 @@ public class App {
             } else if (playerChoice.equals("2")) {
                 CheckEven.play(scanner);
             } else if (playerChoice.equals("0")) {
-                System.out.print("Goodbye.");
+                System.out.println("Goodbye.");
                 return;
             } else {
-                System.out.print("Wrong input.");
+                System.out.println("Wrong input.");
                 return;
             }
 
