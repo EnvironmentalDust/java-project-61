@@ -4,42 +4,41 @@ import hexlet.code.games.CheckEven;
 
 import java.util.Scanner;
 
+import static hexlet.code.games.Greet.greetPlayer;
+
 public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String playerName = "Placeholder";
-        int playerChoice = -1;
+        String playerChoice = "";
 
-        while (playerChoice != 0) {
+        while (!playerChoice.equals("0")) {
 
-            greetPlayer();
+            showMenu();
 
-            playerChoice = scanner.nextInt();
-            System.out.printf("Your choice: %s%n", playerChoice);
+            playerChoice = scanner.next();
+            System.out.printf("Your choice: %s%n%n", playerChoice);
 
-            switch (playerChoice) {
-                case 1 -> playerName = getPlayerName(scanner);
-                case 2 -> CheckEven.play(scanner, playerName);
-                case 0 -> System.out.print("Goodbye.");
+            if (playerChoice.equals("1")) {
+                greetPlayer(scanner);
+            } else if (playerChoice.equals("2")) {
+                CheckEven.play(scanner);
+            } else if (playerChoice.equals("0")) {
+                System.out.print("Goodbye.");
+                return;
+            } else {
+                System.out.print("Wrong input.");
+                return;
             }
+
         }
     }
 
-    public static void greetPlayer() {
+    public static void showMenu() {
         System.out.println("""
                 Please enter the game number and press Enter.
                 1 - Greet
                 2 - Even
                 0 - Exit""");
-    }
-
-    public static String getPlayerName(Scanner scannerIn) {
-        System.out.println("Welcome to the Brain Games!");
-        System.out.println("May i have your name?");
-        String playerName = scannerIn.next();
-        System.out.println("Hello, " + playerName + "!");
-
-        return playerName;
     }
 
 }

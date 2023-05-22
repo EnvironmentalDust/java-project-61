@@ -1,19 +1,23 @@
 package hexlet.code.games;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class CheckEven {
 
-    public static void play(Scanner scannerIn, String playerName) {
+    public static void play(Scanner scannerIn) {
+        String playerName;
         String playerInput;
         String correctAnswer;
         int randInt;
+
+        playerName = Greet.greetPlayer(scannerIn);
 
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
         for (int i = 0; i < 3; i++) {
 
-            randInt = (int) (Math.random() * 100);
+            randInt = getRandomIntInRange(-100000, 100000);
 
             System.out.printf("Question: %s%n", randInt);
             playerInput = scannerIn.next();
@@ -31,6 +35,11 @@ public class CheckEven {
         }
 
         System.out.printf("Congratulations, %s!%n", playerName);
+    }
+
+    public static int getRandomIntInRange(int min, int max) {
+        Random random = new Random();
+        return random.nextInt(max - min) + min;
     }
 
 }
