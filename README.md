@@ -6,3 +6,6 @@
 
 ### asciinema for Even game
 [![asciicast](https://asciinema.org/a/e8RUM7JKp5jbsdrBCsenmHaQK.svg)](https://asciinema.org/a/e8RUM7JKp5jbsdrBCsenmHaQK)
+
+### asciinema for Calc game
+[![asciicast](https://asciinema.org/a/4ur1wtW0Awa5WotDUDAIke6dm.svg)](https://asciinema.org/a/4ur1wtW0Awa5WotDUDAIke6dm)
