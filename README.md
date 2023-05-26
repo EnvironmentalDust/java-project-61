@@ -9,3 +9,6 @@
 
 ### asciinema for Calc game
 [![asciicast](https://asciinema.org/a/4ur1wtW0Awa5WotDUDAIke6dm.svg)](https://asciinema.org/a/4ur1wtW0Awa5WotDUDAIke6dm)
+
+### asciinema for GCD game
+[![asciicast](https://asciinema.org/a/Bh5QTLqiJjI7K09kRpKtHgGoW.svg)](https://asciinema.org/a/Bh5QTLqiJjI7K09kRpKtHgGoW)
