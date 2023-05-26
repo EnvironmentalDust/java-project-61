@@ -4,11 +4,10 @@ import hexlet.code.Engine;
 import java.util.Scanner;
 
 public class CheckEven {
+    public static final int RANGE_MIN = -100000;
+    public static final int RANGE_MAX = 100000;
 
     public static void play(Scanner scannerIn) {
-        int rangeMin = -100000;
-        int rangeMax = 100000;
-
         String playerName;
         String playerInput;
         String correctAnswer;
@@ -20,7 +19,7 @@ public class CheckEven {
 
         for (int i = 0; i < Engine.getMaxNumberOfQuestions(); i++) {
 
-            randInt = Engine.getRandomIntInRange(rangeMin, rangeMax);
+            randInt = Engine.getRandomIntInRange(RANGE_MIN, RANGE_MAX);
             correctAnswer = (randInt % 2 == 0) ? "yes" : "no";
 
             Engine.showQuestion(String.valueOf(randInt));

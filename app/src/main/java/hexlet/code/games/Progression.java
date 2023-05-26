@@ -5,12 +5,12 @@ import hexlet.code.Engine;
 import java.util.Scanner;
 
 public class Progression {
-    public static void play(Scanner scannerIn) {
-        int rangeMin = 1;
-        int rangeMax = 100;
-        int prLengthMin = 5;
-        int prLengthMax = 11;
+    public static final int RANGE_MIN = 1;
+    public static final int RANGE_MAX = 100;
+    public static final int PR_LENGTH_MIN = 5;
+    public static final int PR_LENGTH_MAX = 11;
 
+    public static void play(Scanner scannerIn) {
         String playerName;
         String playerInput;
         String correctAnswer;
@@ -26,9 +26,9 @@ public class Progression {
 
         for (int i = 0; i < Engine.getMaxNumberOfQuestions(); i++) {
 
-            prStart = Engine.getRandomIntInRange(rangeMin, rangeMax);
-            prStep = Engine.getRandomIntInRange(rangeMin, rangeMax);
-            prLength = Engine.getRandomIntInRange(prLengthMin, prLengthMax);
+            prStart = Engine.getRandomIntInRange(RANGE_MIN, RANGE_MAX);
+            prStep = Engine.getRandomIntInRange(RANGE_MIN, RANGE_MAX);
+            prLength = Engine.getRandomIntInRange(PR_LENGTH_MIN, PR_LENGTH_MAX);
             prHiddenIndex = Engine.getRandomIntInRange(1, prLength + 1);
 
             correctAnswer = String.valueOf(prStart + (prStep * prHiddenIndex));

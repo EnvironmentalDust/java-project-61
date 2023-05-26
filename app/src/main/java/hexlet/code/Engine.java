@@ -6,9 +6,10 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Engine {
+    public static final int MAX_NUMBER_OF_QUESTIONS = 3;
 
     public static int getMaxNumberOfQuestions() {
-        return 3;
+        return MAX_NUMBER_OF_QUESTIONS;
     }
 
     public static String greetPlayer(Scanner scannerIn) {
