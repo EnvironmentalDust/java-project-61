@@ -5,6 +5,7 @@ import java.util.Scanner;
 import static hexlet.code.games.Greet.greetPlayer;
 import hexlet.code.games.CheckEven;
 import hexlet.code.games.Calc;
+import hexlet.code.games.GCD;
 
 public class App {
     public static void main(String[] args) {
@@ -22,6 +23,8 @@ public class App {
             CheckEven.play(scanner);
         } else if (playerChoice.equals("3")) {
             Calc.play(scanner);
+        } else if (playerChoice.equals("4")) {
+            GCD.play(scanner);
         } else if (playerChoice.equals("0")) {
             System.out.println("Goodbye.");
         } else {
@@ -37,6 +40,7 @@ public class App {
                 1 - Greet
                 2 - Even
                 3 - Calc
+                4 - GDC
                 0 - Exit""");
     }
 
