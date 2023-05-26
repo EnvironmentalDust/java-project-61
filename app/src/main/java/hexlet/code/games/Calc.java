@@ -31,6 +31,7 @@ public class Calc {
             playerInput = Engine.getAnswer(scannerIn);
 
             if (!Engine.checkAnswer(playerInput, correctAnswer)) {
+                Engine.msgTryAgain(playerName);
                 return;
             }
 

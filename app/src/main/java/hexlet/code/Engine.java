@@ -45,4 +45,8 @@ public class Engine {
         System.out.printf("Congratulations, %s!%n", playerName);
     }
 
+    public static void msgTryAgain(String playerName) {
+        System.out.printf("Let's try again, %s!%n", playerName);
+    }
+
 }
