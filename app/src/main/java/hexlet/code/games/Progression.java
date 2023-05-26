@@ -5,6 +5,13 @@ import hexlet.code.Engine;
 import java.util.Scanner;
 
 public class Progression {
+    static int rangeMin = 1;
+    static int rangeMax = 100;
+
+    static int prLengthMin = 5;
+    static int prLengthMax = 11;
+
+
     public static void play(Scanner scannerIn) {
         String playerName;
         String playerInput;
@@ -19,11 +26,11 @@ public class Progression {
 
         Engine.showRules("What number is missing in the progression?");
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < Engine.numberOfQuestions; i++) {
 
-            prStart = Engine.getRandomIntInRange(1, 21);
-            prStep = Engine.getRandomIntInRange(1, 11);
-            prLength = Engine.getRandomIntInRange(5, 11);
+            prStart = Engine.getRandomIntInRange(rangeMin, rangeMax);
+            prStep = Engine.getRandomIntInRange(rangeMin, rangeMax);
+            prLength = Engine.getRandomIntInRange(prLengthMin, prLengthMax);
             prHiddenIndex = Engine.getRandomIntInRange(1, prLength + 1);
 
             correctAnswer = String.valueOf(prStart + (prStep * prHiddenIndex));

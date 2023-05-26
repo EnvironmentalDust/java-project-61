@@ -5,6 +5,9 @@ import hexlet.code.Engine;
 import java.util.Scanner;
 
 public class Prime {
+    static int rangeMin = 0;
+    static int rangeMax = 101;
+
     public static void play(Scanner scannerIn) {
         String playerName;
         String playerInput;
@@ -16,9 +19,9 @@ public class Prime {
 
         Engine.showRules("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < Engine.numberOfQuestions; i++) {
 
-            randInt = Engine.getRandomIntInRange(0, 101);
+            randInt = Engine.getRandomIntInRange(rangeMin, rangeMax);
             correctAnswer = isPrime(randInt) ? "yes" : "no";
 
             Engine.showQuestion(String.format("%s", randInt));
@@ -36,17 +39,12 @@ public class Prime {
     }
 
     public static boolean isPrime(int number) {
-
         if (number <= 1) {
-            return false;
-        } else if (number == 2 || number == 3) {
-            return true;
-        } else if (number % 2 == 0 || number % 3 == 0) {
             return false;
         }
 
-        for (int i = 5; i <= Math.sqrt(number); i = i + 6) {
-            if (number % i == 0 || number % (i + 2) == 0) {
+        for (int i = 2; i <= number / 2; i++) {
+            if ((number % i) == 0) {
                 return false;
             }
         }
