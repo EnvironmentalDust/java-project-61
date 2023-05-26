@@ -20,7 +20,7 @@ public class App {
         System.out.printf("Your choice: %s%n%n", playerChoice);
 
         if (playerChoice.equals("1")) {
-            Greet.greetPlayer(scanner);
+            Greet.play(scanner);
         } else if (playerChoice.equals("2")) {
             CheckEven.play(scanner);
         } else if (playerChoice.equals("3")) {

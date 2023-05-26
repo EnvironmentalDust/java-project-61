@@ -13,7 +13,7 @@ public class Engine {
     }
 
     public static String greetPlayer(Scanner scannerIn) {
-        return Greet.greetPlayer(scannerIn);
+        return Greet.play(scannerIn);
     }
 
     public static int getRandomIntInRange(int min, int max) {
