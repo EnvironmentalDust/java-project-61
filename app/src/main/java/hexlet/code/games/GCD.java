@@ -5,10 +5,10 @@ import hexlet.code.Engine;
 import java.util.Scanner;
 
 public class GCD {
-    static int rangeMin = 0;
-    static int rangeMax = 101;
-
     public static void play(Scanner scannerIn) {
+        int rangeMin = 0;
+        int rangeMax = 101;
+
         String playerName;
         String playerInput;
         String correctAnswer;
@@ -20,7 +20,7 @@ public class GCD {
 
         Engine.showRules("Find the greatest common divisor of given numbers.");
 
-        for (int i = 0; i < Engine.numberOfQuestions; i++) {
+        for (int i = 0; i < Engine.getMaxNumberOfQuestions(); i++) {
 
             randInt1 = Engine.getRandomIntInRange(rangeMin, rangeMax);
             randInt2 = Engine.getRandomIntInRange(rangeMin, rangeMax);

@@ -5,26 +5,25 @@ import java.util.Scanner;
 import hexlet.code.Engine;
 
 public class Calc {
-    static int maxOperations = 3;
-    static int rangeMin = -10;
-    static int rangeMax = 10;
-
     public static void play(Scanner scannerIn) {
+        int maxOperations = 3;
+        int rangeMin = -10;
+        int rangeMax = 10;
+
         String playerName;
         String playerInput;
         String correctAnswer;
 
-
         int randInt1;
         int randInt2;
         String operation;
-        String[] mathOps = getMathOps();
+        String[] mathOps = getMathOps(maxOperations);
 
         playerName = Engine.greetPlayer(scannerIn);
 
         Engine.showRules("What is the result of the expression?");
 
-        for (int i = 0; i < Engine.numberOfQuestions; i++) {
+        for (int i = 0; i < Engine.getMaxNumberOfQuestions(); i++) {
 
             randInt1 = Engine.getRandomIntInRange(rangeMin, rangeMax);
             randInt2 = Engine.getRandomIntInRange(rangeMin, rangeMax);
@@ -45,7 +44,7 @@ public class Calc {
         Engine.congratulate(playerName);
     }
 
-    public static String[] getMathOps() {
+    public static String[] getMathOps(int maxOperations) {
         String[] mathOps = new String[maxOperations];
 
         mathOps[0] = "+";

@@ -5,14 +5,12 @@ import hexlet.code.Engine;
 import java.util.Scanner;
 
 public class Progression {
-    static int rangeMin = 1;
-    static int rangeMax = 100;
-
-    static int prLengthMin = 5;
-    static int prLengthMax = 11;
-
-
     public static void play(Scanner scannerIn) {
+        int rangeMin = 1;
+        int rangeMax = 100;
+        int prLengthMin = 5;
+        int prLengthMax = 11;
+
         String playerName;
         String playerInput;
         String correctAnswer;
@@ -26,7 +24,7 @@ public class Progression {
 
         Engine.showRules("What number is missing in the progression?");
 
-        for (int i = 0; i < Engine.numberOfQuestions; i++) {
+        for (int i = 0; i < Engine.getMaxNumberOfQuestions(); i++) {
 
             prStart = Engine.getRandomIntInRange(rangeMin, rangeMax);
             prStep = Engine.getRandomIntInRange(rangeMin, rangeMax);

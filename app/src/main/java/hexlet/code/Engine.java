@@ -7,7 +7,9 @@ import java.util.Scanner;
 
 public class Engine {
 
-    public static int numberOfQuestions = 3;
+    public static int getMaxNumberOfQuestions() {
+        return 3;
+    }
 
     public static String greetPlayer(Scanner scannerIn) {
         return Greet.greetPlayer(scannerIn);

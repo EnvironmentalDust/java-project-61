@@ -4,10 +4,11 @@ import hexlet.code.Engine;
 import java.util.Scanner;
 
 public class CheckEven {
-    static int rangeMin = -100000;
-    static int rangeMax = 100000;
 
     public static void play(Scanner scannerIn) {
+        int rangeMin = -100000;
+        int rangeMax = 100000;
+
         String playerName;
         String playerInput;
         String correctAnswer;
@@ -17,7 +18,7 @@ public class CheckEven {
 
         Engine.showRules("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
-        for (int i = 0; i < Engine.numberOfQuestions; i++) {
+        for (int i = 0; i < Engine.getMaxNumberOfQuestions(); i++) {
 
             randInt = Engine.getRandomIntInRange(rangeMin, rangeMax);
             correctAnswer = (randInt % 2 == 0) ? "yes" : "no";
