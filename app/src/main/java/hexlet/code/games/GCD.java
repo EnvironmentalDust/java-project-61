@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class GCD {
     public static void play(Scanner scannerIn) {
-        int rangeMin = 0;
+        int rangeMin = 1;
         int rangeMax = 101;
 
         String playerName;
