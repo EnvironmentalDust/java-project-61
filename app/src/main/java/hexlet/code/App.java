@@ -7,6 +7,7 @@ import hexlet.code.games.CheckEven;
 import hexlet.code.games.Calc;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
 
 public class App {
     public static void main(String[] args) {
@@ -28,6 +29,8 @@ public class App {
             GCD.play(scanner);
         } else if (playerChoice.equals("5")) {
             Progression.play(scanner);
+        } else if (playerChoice.equals("6")) {
+            Prime.play(scanner);
         } else if (playerChoice.equals("0")) {
             System.out.println("Goodbye.");
         } else {
@@ -45,6 +48,7 @@ public class App {
                 3 - Calc
                 4 - GDC
                 5 - Progression
+                6 - Prime
                 0 - Exit""");
     }
 
