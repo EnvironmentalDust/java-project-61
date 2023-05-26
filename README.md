@@ -12,3 +12,6 @@
 
 ### asciinema for GCD game
 [![asciicast](https://asciinema.org/a/Bh5QTLqiJjI7K09kRpKtHgGoW.svg)](https://asciinema.org/a/Bh5QTLqiJjI7K09kRpKtHgGoW)
+
+### asciinema for Progression game
+[![asciicast](https://asciinema.org/a/IiZK9D4fa1tjH1eQJewqNFJ9K.svg)](https://asciinema.org/a/IiZK9D4fa1tjH1eQJewqNFJ9K)
