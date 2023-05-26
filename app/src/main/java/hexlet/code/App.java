@@ -2,7 +2,7 @@ package hexlet.code;
 
 import java.util.Scanner;
 
-import static hexlet.code.games.Greet.greetPlayer;
+import hexlet.code.games.Greet;
 import hexlet.code.games.CheckEven;
 import hexlet.code.games.Calc;
 import hexlet.code.games.GCD;
@@ -20,7 +20,7 @@ public class App {
         System.out.printf("Your choice: %s%n%n", playerChoice);
 
         if (playerChoice.equals("1")) {
-            greetPlayer(scanner);
+            Greet.greetPlayer(scanner);
         } else if (playerChoice.equals("2")) {
             CheckEven.play(scanner);
         } else if (playerChoice.equals("3")) {
