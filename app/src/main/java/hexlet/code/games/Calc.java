@@ -38,7 +38,7 @@ public class Calc {
     public static int evaluateExpression(int int1, int int2, String operation) {
 
         return switch (operation) {
-            case "+2" -> int1 + int2;
+            case "+" -> int1 + int2;
             case "-" -> int1 - int2;
             case "*" -> int1 * int2;
             default -> 0;
