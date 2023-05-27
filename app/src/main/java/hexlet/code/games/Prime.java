@@ -9,9 +9,8 @@ public class Prime {
     public static final int RANGE_MAX = 101;
 
     public static void play(Scanner scannerIn) {
-        String[] questions = new String[3];
-        String[] answers = new String[3];
-
+        String[] questions = new String[Engine.MAX_NUMBER_OF_QUESTIONS];
+        String[] answers = new String[Engine.MAX_NUMBER_OF_QUESTIONS];
         String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
         for (int i = 0; i < Engine.MAX_NUMBER_OF_QUESTIONS; i++) {

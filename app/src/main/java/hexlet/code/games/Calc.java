@@ -11,12 +11,11 @@ public class Calc {
     public static final int MAX_OPERATIONS = 3;
 
     public static void play(Scanner scannerIn) {
-        String[] questions = new String[3];
-        String[] answers = new String[3];
+        String[] questions = new String[Engine.MAX_NUMBER_OF_QUESTIONS];
+        String[] answers = new String[Engine.MAX_NUMBER_OF_QUESTIONS];
+        String rules = "What is the result of the expression?";
 
         String[] mathOps = getMathOps();
-
-        String rules = "What is the result of the expression?";
 
         for (int i = 0; i < Engine.MAX_NUMBER_OF_QUESTIONS; i++) {
             int randInt1 = Utils.getRandomIntInRange(RANGE_MIN, RANGE_MAX);

@@ -11,9 +11,8 @@ public class Progression {
     public static final int PR_LENGTH_MAX = 11;
 
     public static void play(Scanner scannerIn) {
-        String[] questions = new String[3];
-        String[] answers = new String[3];
-
+        String[] questions = new String[Engine.MAX_NUMBER_OF_QUESTIONS];
+        String[] answers = new String[Engine.MAX_NUMBER_OF_QUESTIONS];
         String rules = "What number is missing in the progression?";
 
         for (int i = 0; i < Engine.MAX_NUMBER_OF_QUESTIONS; i++) {
