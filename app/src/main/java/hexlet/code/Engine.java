@@ -2,23 +2,13 @@ package hexlet.code;
 
 import hexlet.code.games.Greet;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Engine {
     public static final int MAX_NUMBER_OF_QUESTIONS = 3;
 
-    public static int getMaxNumberOfQuestions() {
-        return MAX_NUMBER_OF_QUESTIONS;
-    }
-
     public static String greetPlayer(Scanner scannerIn) {
         return Greet.play(scannerIn);
-    }
-
-    public static int getRandomIntInRange(int min, int max) {
-        Random random = new Random();
-        return random.nextInt(max - min) + min;
     }
 
     public static void showQuestion(String text) {
@@ -52,6 +42,27 @@ public class Engine {
 
     public static void msgTryAgain(String playerName) {
         System.out.printf("Let's try again, %s!%n", playerName);
+    }
+
+    public static void play(Scanner scannerIn, String rules, String[] questions, String[] answers) {
+        String playerName = Engine.greetPlayer(scannerIn);
+
+        Engine.showRules(rules);
+
+        for (int i = 0; i < Engine.MAX_NUMBER_OF_QUESTIONS; i++) {
+            String correctAnswer = String.valueOf(answers[i]);
+
+            Engine.showQuestion(String.format(questions[i]));
+
+            String playerInput = Engine.getAnswer(scannerIn);
+
+            if (!Engine.checkAnswer(playerInput, correctAnswer)) {
+                Engine.msgTryAgain(playerName);
+                return;
+            }
+        }
+
+        Engine.congratulate(playerName);
     }
 
 }

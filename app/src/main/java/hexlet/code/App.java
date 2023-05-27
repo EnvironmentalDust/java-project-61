@@ -2,7 +2,6 @@ package hexlet.code;
 
 import java.util.Scanner;
 
-import hexlet.code.games.Greet;
 import hexlet.code.games.CheckEven;
 import hexlet.code.games.Calc;
 import hexlet.code.games.GCD;
@@ -19,22 +18,15 @@ public class App {
         playerChoice = scanner.next();
         System.out.printf("Your choice: %s%n%n", playerChoice);
 
-        if (playerChoice.equals("1")) {
-            Greet.play(scanner);
-        } else if (playerChoice.equals("2")) {
-            CheckEven.play(scanner);
-        } else if (playerChoice.equals("3")) {
-            Calc.play(scanner);
-        } else if (playerChoice.equals("4")) {
-            GCD.play(scanner);
-        } else if (playerChoice.equals("5")) {
-            Progression.play(scanner);
-        } else if (playerChoice.equals("6")) {
-            Prime.play(scanner);
-        } else if (playerChoice.equals("0")) {
-            System.out.println("Goodbye.");
-        } else {
-            System.out.println("Wrong input.");
+        switch (playerChoice) {
+            case "1" -> Engine.greetPlayer(scanner);
+            case "2" -> CheckEven.play(scanner);
+            case "3" -> Calc.play(scanner);
+            case "4" -> GCD.play(scanner);
+            case "5" -> Progression.play(scanner);
+            case "6" -> Prime.play(scanner);
+            case "0" -> System.out.println("Goodbye.");
+            default -> System.out.println("Wrong input.");
         }
 
         scanner.close();

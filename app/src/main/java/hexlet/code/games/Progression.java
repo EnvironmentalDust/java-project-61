@@ -1,7 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
+import hexlet.code.Utils;
 import java.util.Scanner;
 
 public class Progression {
@@ -11,40 +11,22 @@ public class Progression {
     public static final int PR_LENGTH_MAX = 11;
 
     public static void play(Scanner scannerIn) {
-        String playerName;
-        String playerInput;
-        String correctAnswer;
+        String[] questions = new String[3];
+        String[] answers = new String[3];
 
-        int prStart;
-        int prStep;
-        int prLength;
-        int prHiddenIndex;
+        String rules = "What number is missing in the progression?";
 
-        playerName = Engine.greetPlayer(scannerIn);
+        for (int i = 0; i < Engine.MAX_NUMBER_OF_QUESTIONS; i++) {
+            int prStart = Utils.getRandomIntInRange(RANGE_MIN, RANGE_MAX);
+            int prStep = Utils.getRandomIntInRange(RANGE_MIN, RANGE_MAX);
+            int prLength = Utils.getRandomIntInRange(PR_LENGTH_MIN, PR_LENGTH_MAX);
+            int prHiddenIndex = Utils.getRandomIntInRange(1, prLength + 1);
 
-        Engine.showRules("What number is missing in the progression?");
-
-        for (int i = 0; i < Engine.getMaxNumberOfQuestions(); i++) {
-
-            prStart = Engine.getRandomIntInRange(RANGE_MIN, RANGE_MAX);
-            prStep = Engine.getRandomIntInRange(RANGE_MIN, RANGE_MAX);
-            prLength = Engine.getRandomIntInRange(PR_LENGTH_MIN, PR_LENGTH_MAX);
-            prHiddenIndex = Engine.getRandomIntInRange(1, prLength + 1);
-
-            correctAnswer = String.valueOf(prStart + (prStep * prHiddenIndex));
-
-            Engine.showQuestion(getProgressionString(prStart, prStep, prLength).replaceFirst(correctAnswer, ".."));
-
-            playerInput = Engine.getAnswer(scannerIn);
-
-            if (!Engine.checkAnswer(playerInput, correctAnswer)) {
-                Engine.msgTryAgain(playerName);
-                return;
-            }
-
+            answers[i] = String.valueOf(prStart + (prStep * prHiddenIndex));
+            questions[i] = getProgressionString(prStart, prStep, prLength).replaceFirst(answers[i], "..");
         }
 
-        Engine.congratulate(playerName);
+        Engine.play(scannerIn, rules, questions, answers);
     }
 
     public static String getProgressionString(int prStart, int prStep, int prLength) {

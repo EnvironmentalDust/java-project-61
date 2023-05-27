@@ -1,7 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
+import hexlet.code.Utils;
 import java.util.Scanner;
 
 public class Prime {
@@ -9,33 +9,19 @@ public class Prime {
     public static final int RANGE_MAX = 101;
 
     public static void play(Scanner scannerIn) {
-        String playerName;
-        String playerInput;
-        String correctAnswer;
+        String[] questions = new String[3];
+        String[] answers = new String[3];
 
-        int randInt;
+        String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-        playerName = Engine.greetPlayer(scannerIn);
+        for (int i = 0; i < Engine.MAX_NUMBER_OF_QUESTIONS; i++) {
+            int randInt = Utils.getRandomIntInRange(RANGE_MIN, RANGE_MAX);
 
-        Engine.showRules("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-
-        for (int i = 0; i < Engine.getMaxNumberOfQuestions(); i++) {
-
-            randInt = Engine.getRandomIntInRange(RANGE_MIN, RANGE_MAX);
-            correctAnswer = isPrime(randInt) ? "yes" : "no";
-
-            Engine.showQuestion(String.format("%s", randInt));
-
-            playerInput = Engine.getAnswer(scannerIn);
-
-            if (!Engine.checkAnswer(playerInput, correctAnswer)) {
-                Engine.msgTryAgain(playerName);
-                return;
-            }
-
+            answers[i] = isPrime(randInt) ? "yes" : "no";
+            questions[i] = String.format("%s", randInt);
         }
 
-        Engine.congratulate(playerName);
+        Engine.play(scannerIn, rules, questions, answers);
     }
 
     public static boolean isPrime(int number) {

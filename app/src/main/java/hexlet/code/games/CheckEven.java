@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 import java.util.Scanner;
 
 public class CheckEven {
@@ -8,32 +9,18 @@ public class CheckEven {
     public static final int RANGE_MAX = 100000;
 
     public static void play(Scanner scannerIn) {
-        String playerName;
-        String playerInput;
-        String correctAnswer;
-        int randInt;
+        String[] questions = new String[3];
+        String[] answers = new String[3];
+        String rules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
-        playerName = Engine.greetPlayer(scannerIn);
+        for (int i = 0; i < Engine.MAX_NUMBER_OF_QUESTIONS; i++) {
+            int randInt = Utils.getRandomIntInRange(RANGE_MIN, RANGE_MAX);
 
-        Engine.showRules("Answer 'yes' if the number is even, otherwise answer 'no'.");
-
-        for (int i = 0; i < Engine.getMaxNumberOfQuestions(); i++) {
-
-            randInt = Engine.getRandomIntInRange(RANGE_MIN, RANGE_MAX);
-            correctAnswer = (randInt % 2 == 0) ? "yes" : "no";
-
-            Engine.showQuestion(String.valueOf(randInt));
-
-            playerInput = Engine.getAnswer(scannerIn);
-
-            if (!Engine.checkAnswer(playerInput, correctAnswer)) {
-                Engine.msgTryAgain(playerName);
-                return;
-            }
-
+            answers[i] = (randInt % 2 == 0) ? "yes" : "no";
+            questions[i] = String.valueOf(randInt);
         }
 
-        Engine.congratulate(playerName);
+        Engine.play(scannerIn, rules, questions, answers);
     }
 
 }

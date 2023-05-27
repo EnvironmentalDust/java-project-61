@@ -1,7 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
+import hexlet.code.Utils;
 import java.util.Scanner;
 
 public class GCD {
@@ -9,35 +9,20 @@ public class GCD {
     public static final int RANGE_MAX = 101;
 
     public static void play(Scanner scannerIn) {
-        String playerName;
-        String playerInput;
-        String correctAnswer;
+        String[] questions = new String[3];
+        String[] answers = new String[3];
 
-        int randInt1;
-        int randInt2;
+        String rules = "Find the greatest common divisor of given numbers.";
 
-        playerName = Engine.greetPlayer(scannerIn);
+        for (int i = 0; i < Engine.MAX_NUMBER_OF_QUESTIONS; i++) {
+            int randInt1 = Utils.getRandomIntInRange(RANGE_MIN, RANGE_MAX);
+            int randInt2 = Utils.getRandomIntInRange(RANGE_MIN, RANGE_MAX);
 
-        Engine.showRules("Find the greatest common divisor of given numbers.");
-
-        for (int i = 0; i < Engine.getMaxNumberOfQuestions(); i++) {
-
-            randInt1 = Engine.getRandomIntInRange(RANGE_MIN, RANGE_MAX);
-            randInt2 = Engine.getRandomIntInRange(RANGE_MIN, RANGE_MAX);
-            correctAnswer = String.valueOf(getGCD(randInt1, randInt2));
-
-            Engine.showQuestion(String.format("%s %s", randInt1, randInt2));
-
-            playerInput = Engine.getAnswer(scannerIn);
-
-            if (!Engine.checkAnswer(playerInput, correctAnswer)) {
-                Engine.msgTryAgain(playerName);
-                return;
-            }
-
+            answers[i] = String.valueOf(getGCD(randInt1, randInt2));
+            questions[i] = String.format("%s %s", randInt1, randInt2);
         }
 
-        Engine.congratulate(playerName);
+        Engine.play(scannerIn, rules, questions, answers);
     }
 
     public static int getGCD(int int1, int int2) {
