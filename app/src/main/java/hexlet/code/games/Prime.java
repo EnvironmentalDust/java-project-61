@@ -2,25 +2,23 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 import hexlet.code.Utils;
-import java.util.Scanner;
 
 public class Prime {
     public static final int RANGE_MIN = 0;
     public static final int RANGE_MAX = 101;
 
-    public static void play(Scanner scannerIn) {
-        String[] questions = new String[Engine.MAX_NUMBER_OF_QUESTIONS];
-        String[] answers = new String[Engine.MAX_NUMBER_OF_QUESTIONS];
+    public static void play() {
+        String[][] rounds = new String[Engine.MAX_NUMBER_OF_QUESTIONS][2];
         String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
         for (int i = 0; i < Engine.MAX_NUMBER_OF_QUESTIONS; i++) {
             int randInt = Utils.getRandomIntInRange(RANGE_MIN, RANGE_MAX);
 
-            answers[i] = isPrime(randInt) ? "yes" : "no";
-            questions[i] = String.format("%s", randInt);
+            rounds[i][0] = String.format("%s", randInt);
+            rounds[i][1] = isPrime(randInt) ? "yes" : "no";
         }
 
-        Engine.play(scannerIn, rules, questions, answers);
+        Engine.play(rules, rounds);
     }
 
     public static boolean isPrime(int number) {
