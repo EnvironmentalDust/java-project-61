@@ -14,7 +14,7 @@ public class Prime {
         for (int i = 0; i < Engine.MAX_NUMBER_OF_QUESTIONS; i++) {
             int randInt = Utils.getRandomIntInRange(RANGE_MIN, RANGE_MAX);
 
-            rounds[i][0] = String.format("%s", randInt);
+            rounds[i][0] = Integer.toString(randInt);
             rounds[i][1] = isPrime(randInt) ? "yes" : "no";
         }
 
