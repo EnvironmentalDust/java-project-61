@@ -6,7 +6,6 @@ import hexlet.code.Utils;
 public class Calc {
     public static final int RANGE_MIN = -10;
     public static final int RANGE_MAX = 10;
-    public static final int MAX_OPERATIONS = 3;
 
     public static void play() {
         String[][] rounds = new String[Engine.MAX_NUMBER_OF_QUESTIONS][2];
@@ -17,7 +16,7 @@ public class Calc {
         for (int i = 0; i < Engine.MAX_NUMBER_OF_QUESTIONS; i++) {
             int randInt1 = Utils.getRandomIntInRange(RANGE_MIN, RANGE_MAX);
             int randInt2 = Utils.getRandomIntInRange(RANGE_MIN, RANGE_MAX);
-            String operation = mathOps[Utils.getRandomIntInRange(0, MAX_OPERATIONS)];
+            String operation = mathOps[Utils.getRandomIntInRange(0, mathOps.length)];
 
             rounds[i][0] = String.format("%s %s %s", randInt1, operation, randInt2);
             rounds[i][1] = String.valueOf(evaluateExpression(randInt1, randInt2, operation));
