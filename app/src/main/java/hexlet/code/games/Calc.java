@@ -35,7 +35,7 @@ public class Calc {
             case "+" -> int1 + int2;
             case "-" -> int1 - int2;
             case "*" -> int1 * int2;
-            default -> 0;
+            default -> throw new Error("Unknown operation!");
         };
 
     }
